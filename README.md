@@ -5,11 +5,11 @@ MediaPipeを用いて姿勢推定を行い，
 ## 概要
 
 このシステムはiPadに搭載されているLiDARとカメラを用いて現実の空間やオブジェクト(物体)を3Dスキャンし，その3DスキャンデータをBlenderとYOLOを用いて物体ごとに3Dデータを自動的に抽出するシステムです．基本的に3Dスキャンした3Dデータはすべてのオブジェクトが一体化していますが，抽出するオブジェクトを選択するとそのオブジェクト以外のポリゴンを削除していき，選択したオブジェクトだけが残ります．
-![エラー](imge/split.png)
+![エラー](image/split.png)
 
 システムの流れとしてLiDARでスキャンした3DデータをBlenderに表示させ，その画面をキャプチャし仮想カメラに書き込み配信を行います．配信されている画像をPythonのYOLOを用いて物体検出を行いバウンディングボックス座標を取得します．Blender上でバウンディングボックス外にあるオブジェクトの頂点を選択し削除します．Blender上でオブジェクトを少し回転させ，再びその画面を使って物体検出を行う．オブジェクトが一回転したら終了です．．
 
-![エラー](imge/abstract.png)
+![エラー](image/abstract.png)
 
 このシステムは物体検出を行う「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pyautogui_yolo.py」とBlender上のオブジェクト操作を行う「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/object_split.py」の二つコードで動作しています．
 
