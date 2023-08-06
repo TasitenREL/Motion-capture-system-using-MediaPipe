@@ -1,34 +1,33 @@
-# Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes
+# Motion-capture-system-using-MediaPipe
 
-MediaPipeを用いて姿勢推定を行い，
+MediaPipeを用いて姿勢推定を行い，Unity上の3Dモデルに取得した関節座標を付与することでモーションキャプチャーを行うシステムです．
 
 ## 概要
 
-このシステムはiPadに搭載されているLiDARとカメラを用いて現実の空間やオブジェクト(物体)を3Dスキャンし，その3DスキャンデータをBlenderとYOLOを用いて物体ごとに3Dデータを自動的に抽出するシステムです．基本的に3Dスキャンした3Dデータはすべてのオブジェクトが一体化していますが，抽出するオブジェクトを選択するとそのオブジェクト以外のポリゴンを削除していき，選択したオブジェクトだけが残ります．
-![エラー](image/split.png)
+このシステムはMediaPipeという映像から人の姿勢推定を行うシステムを用いて映像内の人の関節座標を取得し，HTTP通信を用いてUnity上の3Dモデルに関節座標を付与することでモーションキャプチャーを行うシステムです．単眼カメラや動画などのさまざまな映像から姿勢推定を行うことができます．
 
-システムの流れとしてLiDARでスキャンした3DデータをBlenderに表示させ，その画面をキャプチャし仮想カメラに書き込み配信を行います．配信されている画像をPythonのYOLOを用いて物体検出を行いバウンディングボックス座標を取得します．Blender上でバウンディングボックス外にあるオブジェクトの頂点を選択し削除します．Blender上でオブジェクトを少し回転させ，再びその画面を使って物体検出を行う．オブジェクトが一回転したら終了です．．
 
+システムの流れとしてMediaPipeで1フレームごとに姿勢推定を行い，HTTP通信を用いてサーバーに座標を送信します．サーバー上で値が更新されたらUnityでその座標を受信し，Unity上の各関節にその座標を与えることでモーションキャプチャーを行っています．
 ![エラー](image/abstract.png)
 
-このシステムは物体検出を行う「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pyautogui_yolo.py」とBlender上のオブジェクト操作を行う「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/object_split.py」の二つコードで動作しています．
+このシステムは姿勢推定を行う「Motion-capture-system-using-MediaPipe/pose_post_yolo.py」とサーバーの「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pose_post_yolo.py」とUnityで3Dモデルを動かす「humanPos.cs」の二つコードで動作しています．
 
 ## 期間
 2ヶ月
 
 ## 言語
-言語：Python
+言語：Python，C#
 
 ## 開発環境
-個人開発でLinux環境で開発を行いました．
+個人開発でUnityを動かすWindowsとMediaPipeとサーバーを動かすLinuxで開発を行いました．
 
 ## 制作背景
-大学の卒業研究として作成しました．3Dスキャンに興味を持ち，3Dスキャンが手軽に行えるiPhone13Proを購入して様々なものをスキャンしていました．そんな時に3Dスキャンデータをもっと扱いやすくする方法は無いかと考え，このシステムを開発しようとしました．
-Pythonは最も慣れてい言語でしたが，Linux環境での開発やLinuxの仮想カメラなど初めて扱うものもあり，使いこなすまで時間がかかりました．しかし今ではLinuxが一番好きになりました．
+趣味として作成しました．近年Virtual Youtuberなどが話題になっていますが，同じことをやるためにはモーションキャプチャー用のセンサーを付ける必要があるため，容易にモーションキャプチャーを行えるようにしたいと考えました．本システムは人型3Dモデルを動かせるわけではなく，立方体を各関節と見なして，各立方体を円柱でつなぐことで人型3Dモデルを表現しています．本来はボーンなどが入った人型3Dモデルで行いたいのですが，難しかったためこのようなシステムになりました．現在も少しずつ開発を続けており，逆運動学などを学んでいずれボーンが入った人型3Dモデルでモーションキャプチャを行えるようにしたいと考えています．
+Unityは少ししか触ったことが無かったため，Unityの勉強にとても良い機会になりました．
 
 ## 動作風景URL
-動作している様子を撮影しました．システムを起動するとBlender上の3DスキャンデータからYOLOを用いて物体検出を行います(今回は人のみを検出します)．物体検出の結果からPythonで自動制御マウスを用いたBlender上の抽出対象ではない3Dオブジェクト(人以外のオブジェクト)を削除します．その後，3Dデータを少しだけ回転させて，再び物体検出及び余分な3Dオブジェクトの削除を行います．これを3Dデータが一回転したら終了です．
+動作している様子を撮影しました．Youtubeの[ラジオ体操動画](https://www.youtube.com/watch?v=yQ7Oo9IUN7s)からモーションキャプチャーを行っており，緑の立方体の関節を赤い円柱でつなぐことで人を表現しています．
 
-編集有URL:[https://youtu.be/u3_v-uW22-Q](https://youtu.be/u3_v-uW22-Q)
+編集有URL:[https://www.youtube.com/watch?v=EhEjuchXWuI](https://www.youtube.com/watch?v=EhEjuchXWuI)
 
-編集無URL:[https://youtu.be/9OahinX9l5k](https://youtu.be/9OahinX9l5k)
+姿勢推定の様子URL:[https://www.youtube.com/watch?v=8p_74dOSpkI](https://www.youtube.com/watch?v=8p_74dOSpkI)
