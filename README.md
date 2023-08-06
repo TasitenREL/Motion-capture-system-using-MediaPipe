@@ -28,6 +28,6 @@ Unityは少ししか触ったことが無かったため，Unityの勉強にと�
 ## 動作風景URL
 動作している様子を撮影しました．Youtubeの[ラジオ体操動画](https://www.youtube.com/watch?v=yQ7Oo9IUN7s)からモーションキャプチャーを行っており，緑の立方体の関節を赤い円柱でつなぐことで人を表現しています．
 
-編集有URL:[https://www.youtube.com/watch?v=EhEjuchXWuI](https://www.youtube.com/watch?v=EhEjuchXWuI)
+Unity上3Dモデルの様子URL:[https://www.youtube.com/watch?v=EhEjuchXWuI](https://www.youtube.com/watch?v=EhEjuchXWuI)
 
 姿勢推定の様子URL:[https://www.youtube.com/watch?v=8p_74dOSpkI](https://www.youtube.com/watch?v=8p_74dOSpkI)
