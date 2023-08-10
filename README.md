@@ -11,7 +11,7 @@ MediaPipeを用いて姿勢推定を行い，Unity上の3Dモデルに取得し�
 
 ![エラー](image/abstract.png)
 
-このシステムは姿勢推定を行う「Motion-capture-system-using-MediaPipe/pose_post_yolo.py」とサーバーの「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pose_post_yolo.py」とUnityで3Dモデルを動かす「humanPos.cs」の二つコードで動作しています．
+このシステムは姿勢推定を行う「Motion-capture-system-using-MediaPipe/pose_post_yolo.py」とサーバーの「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pose_post_yolo.py」とUnityで3Dモデルを動かす「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/humanPos.cs」の二つコードで動作しています．
 
 ## 期間
 2ヶ月
