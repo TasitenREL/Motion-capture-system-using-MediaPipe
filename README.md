@@ -11,7 +11,7 @@ MediaPipeを用いて姿勢推定を行い，Unity上の3Dモデルに取得し�
 
 ![エラー](image/abstract.png)
 
-このシステムは姿勢推定を行う「[Motion-capture-system-using-MediaPipe/pose_post_yolo.py](https://github.com/TasitenREL/Motion-capture-system-using-MediaPipe/blob/main/pose_post_yolo.py)」とサーバーの「[Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/http_server_json.py](https://github.com/TasitenREL/Motion-capture-system-using-MediaPipe/blob/main/http_server_json.py)」とUnityで3Dモデルを動かす「[Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/humanPos.cs](https://github.com/TasitenREL/Motion-capture-system-using-MediaPipe/blob/main/humanPos.cs)」の二つコードで動作しています．
+このシステムは姿勢推定を行う「[Motion-capture-system-using-MediaPipe/pose_post_yolo.py](https://github.com/TasitenREL/Motion-capture-system-using-MediaPipe/blob/main/pose_post_yolo.py)」とサーバーの「[Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/http_server_json.py](https://github.com/TasitenREL/Motion-capture-system-using-MediaPipe/blob/main/http_server_json.py)」とUnityで3Dモデルを動かす「[Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/humanPos.cs](https://github.com/TasitenREL/Motion-capture-system-using-MediaPipe/blob/main/humanPos.cs)」の3つコードで動作しています．
 
 ## 期間
 2ヶ月
