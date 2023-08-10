@@ -8,6 +8,7 @@ MediaPipeを用いて姿勢推定を行い，Unity上の3Dモデルに取得し�
 
 
 システムの流れとしてMediaPipeで1フレームごとに姿勢推定を行い，HTTP通信を用いてサーバーに座標を送信します．サーバー上で値が更新されたらUnityでその座標を受信し，Unity上の各関節にその座標を与えることでモーションキャプチャーを行っています．
+
 ![エラー](image/abstract.png)
 
 このシステムは姿勢推定を行う「Motion-capture-system-using-MediaPipe/pose_post_yolo.py」とサーバーの「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pose_post_yolo.py」とUnityで3Dモデルを動かす「humanPos.cs」の二つコードで動作しています．
